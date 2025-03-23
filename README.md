@@ -36,7 +36,7 @@ Routes receive safety scores that update in real-time based on changing conditio
 4. *Restaurant Selection*
    - Users select a restaurant from either the swipe interface or the saved "Eat List."
 
-5. *Safety Route Generation*
+5. *Safe Route Generation*
    - System analyzes multiple potential routes to the selected restaurant.
    - Safety factors are evaluated (crime data, lighting, traffic conditions, time of day).
    - Routes are ranked by safety score rather than just distance/time.
