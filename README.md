@@ -48,13 +48,7 @@ Routes receive safety scores that update in real-time based on changing conditio
 #### Core Framework & Language
 - *React 18*: Main frontend framework
 - *TypeScript*: For type-safe development
-- *Vite*: Build tool and development server
-
-#### UI & Styling
-##### Component Libraries
-- *shadcn/ui*: Modern, customizable UI components
-- *radix-ui*: Accessible UI primitives
-- *lucide-react*: Modern icon library
+- *Vercel*: Build tool and development server
 
 ##### CSS & Styling
 - *tailwindcss*: Utility-first CSS framework
