@@ -86,8 +86,6 @@ Routes receive safety scores that update in real-time based on changing conditio
 ### *Eat List*
 *Eat List* allows users to save their favorite restaurants in one place. Users can also share their *Eat List* with friends and family, allowing them to vote on whether to visit a particular place or not. This feature simplifies group decision-making and makes planning dining experiences more interactive and engaging.
 
-
-## Future Innovations
 ### *Food Cupid*
 *Food Cupid* is a unique feature of SwipeN-Bite that allows users in the same city to connect with each other over food! If two users have swiped right on the same restaurant within a 5-10 minute window, the app matches them up and enables conversation. This eliminates the awkwardness of the first approach and transforms shared culinary interests into meaningful connections, creating a natural pathway to discover like-minded food enthusiasts in your area.
 ---
