@@ -60,7 +60,7 @@ Routes receive safety scores that update in real-time based on changing conditio
 - *tailwindcss*: Utility-first CSS framework
 - *@tailwindcss/forms*: Form styling utilities
 - *tailwindcss-animate*: Animation utilities
-- *class-variance-authority*: Component style variants
+- *class-variance-authority*: Component style variants.
 
 #### State Management & Data Flow
 - *React Context API*: Application state management
