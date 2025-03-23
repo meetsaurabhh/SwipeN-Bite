@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,7 +7,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { AtSign, Lock, User } from 'lucide-react';
 
 export function AuthForm() {
-  const { login, signup } = useAuth();
+  const { login, register } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   
   // Login form state
@@ -63,7 +62,7 @@ export function AuthForm() {
     }
     
     setIsLoading(true);
-    const success = await signup(signupUsername, signupEmail, signupPassword);
+    const success = await register(signupUsername, signupEmail, signupPassword);
     setIsLoading(false);
     
     if (!success) {
