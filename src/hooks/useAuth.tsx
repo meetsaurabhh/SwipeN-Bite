@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { User, users } from '@/utils/mockData';
+import { User } from '@/utils/mockData';
 import { useToast } from '@/components/ui/use-toast';
 
 interface AuthContextType {
   user: User | null;
   selectedCity: string | null;
   login: (email: string, password: string) => Promise<boolean>;
+  register: (username: string, email: string, password: string) => Promise<boolean>;
   logout: () => void;
   isAuthenticated: boolean;
   setSelectedCity: (city: string) => void;
@@ -30,12 +31,57 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
+  const register = async (username: string, email: string, password: string): Promise<boolean> => {
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    // Get existing users from localStorage
+    const existingUsers = JSON.parse(localStorage.getItem('swipe-n-bite-users') || '[]');
+    
+    // Check if email already exists
+    if (existingUsers.some((u: User) => u.email === email)) {
+      toast({
+        title: "Registration failed",
+        description: "Email already exists",
+        variant: "destructive",
+        duration: 3000,
+      });
+      return false;
+    }
+
+    // Create new user
+    const newUser: User = {
+      id: Date.now().toString(),
+      username,
+      email,
+      password, // In a real app, this would be hashed
+    };
+
+    // Add user to localStorage
+    existingUsers.push(newUser);
+    localStorage.setItem('swipe-n-bite-users', JSON.stringify(existingUsers));
+
+    // Auto login after registration
+    setUser(newUser);
+    localStorage.setItem('swipe-n-bite-user', JSON.stringify(newUser));
+
+    toast({
+      title: "Registration successful",
+      description: `Welcome to Swipe N' Bite, ${username}!`,
+      duration: 3000,
+    });
+    return true;
+  };
+
   const login = async (email: string, password: string): Promise<boolean> => {
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 800));
     
+    // Get users from localStorage
+    const existingUsers = JSON.parse(localStorage.getItem('swipe-n-bite-users') || '[]');
+    
     // Check if user exists
-    const foundUser = users.find(u => u.email === email && u.password === password);
+    const foundUser = existingUsers.find((u: User) => u.email === email && u.password === password);
     
     if (foundUser) {
       setUser(foundUser);
@@ -80,6 +126,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         user,
         selectedCity,
         login,
+        register,
         logout,
         isAuthenticated: !!user,
         setSelectedCity: handleCitySelect
