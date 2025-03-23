@@ -1,5 +1,4 @@
 # SwipeN-Bite
-# SwipeN-Bite
 
 ## Current Situation
 City exploration in unfamiliar environments creates triple challenges: finding quality dining options; finding good company, and travelling safely to and from the destination. A secure platform for finding dining establishments, taking a collective decision and matching users based on shared interests; is particularly useful to this unique inconvenience. It also ensures safety by providing the most secure route to the restaurant, factoring in safety conditions.
