@@ -72,7 +72,7 @@ Routes receive safety scores that update in real-time based on changing conditio
   - User authentication state
   - Saved food items
   - User preferences
-  - Location settings
+  - Location settings.
 
 ---
 
